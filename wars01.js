@@ -38,21 +38,22 @@
 // console.log(findNeedle(haystack_3));
 
 
-//positiveSum функция, которая возвращает сумму положительных чисел 
+//positiveSum функция, которая возвращает сумму положительных чисел
 //если таких чисел в массиве нет то выводит ноль.
-function positiveSum(arr) {
-	let sum = 0;
-	for (let elem of arr) {
-		if (elem >= 0) {
-			sum += elem;
-		}
-	}
+// function positiveSum(arr) {
+// 	let sum = 0;
+// 	for (let elem of arr) {
+// 		if (elem >= 0) {
+// 			sum += elem;
+// 		}
+// 	}
 
-	return sum;
-}
+// 	return sum;
+// }
 
-console.log(positiveSum([1, 2, 3, 4, 5]));//, 15
-console.log(positiveSum([1, -2, 3, 4, 5]));//, 13
-console.log(positiveSum([]));//, 0
-console.log(positiveSum([-1, -2, -3, -4, -5]));//, 0
-console.log(positiveSum([-1, 2, 3, 4, -5]));//, 9
+// console.log(positiveSum([1, 2, 3, 4, 5]));//, 15
+// console.log(positiveSum([1, -2, 3, 4, 5]));//, 13
+// console.log(positiveSum([]));//, 0
+// console.log(positiveSum([-1, -2, -3, -4, -5]));//, 0
+// console.log(positiveSum([-1, 2, 3, 4, -5]));//, 9
+
