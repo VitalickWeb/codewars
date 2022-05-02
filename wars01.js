@@ -16,6 +16,7 @@
 // console.log(plural(Infinity));
 
 
+
 //find the needle
 // function findNeedle(haystack) {
 // 	var getIdx = '';
@@ -38,6 +39,7 @@
 // console.log(findNeedle(haystack_3));
 
 
+
 //positiveSum функция, которая возвращает сумму положительных чисел
 //если таких чисел в массиве нет то выводит ноль.
 // function positiveSum(arr) {
@@ -57,20 +59,38 @@
 // console.log(positiveSum([-1, -2, -3, -4, -5]));//, 0
 // console.log(positiveSum([-1, 2, 3, 4, -5]));//, 9
 
-//Фальшивая корзина
-function fakeBin(x) {
-	let result = '';
 
-	for (let elem of x) {
-		if (elem < 5) {
-			result += '0';
-		} else if (elem >= 5) {
-			result += '1';
-		}
-	}
-	return result;
+
+//Фальшивая корзина
+// function fakeBin(x) {
+// 	let result = '';
+
+// 	for (let elem of x) {
+// 		if (elem < 5) {
+// 			result += '0';
+// 		} else if (elem >= 5) {
+// 			result += '1';
+// 		}
+// 	}
+// 	return result;
+// }
+
+// console.log(fakeBin('45385593107843568'));//, '01011110001100111'
+// console.log(fakeBin('509321967506747'));//, '101000111101101'
+// console.log(fakeBin('366058562030849490134388085'));//, '011011110000101010000011011'
+
+
+//Задача century, учитывая год возвращать столетие в котором он нахоится.
+function century(year) {
+	let num = year / 100;
+	let century = Math.ceil(num);
+	return century;
 }
 
-console.log(fakeBin('45385593107843568'));//, '01011110001100111'
-console.log(fakeBin('509321967506747'));//, '101000111101101' 
-console.log(fakeBin('366058562030849490134388085'));//, '011011110000101010000011011'
+console.log(century(1705));//, 18, 'Testing for year 1705'
+console.log(century(1900));//, 19, 'Testing for year 1900
+console.log(century(1601));//, 17, 'Testing for year 1601
+console.log(century(2000));//, 20, 'Testing for year 2000
+console.log(century(89));//, 1, 'Testing for year 89
+
+
