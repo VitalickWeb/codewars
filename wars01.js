@@ -39,8 +39,8 @@
 
 
 //positiveSum функция, которая возвращает сумму положительных чисел 
-//если таких чисел в массиве нет то выводит дефолтом ноль.
-function positiveSum(arr = 0) {
+//если таких чисел в массиве нет то выводит ноль.
+function positiveSum(arr) {
 	let sum = 0;
 	for (let elem of arr) {
 		if (elem >= 0) {
