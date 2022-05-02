@@ -96,7 +96,7 @@
 
 //функция, которая преобразует данное логическое значение в его строковое представление.
 function booleanToString(b) {
-	if (b == true) {
+	if (b === true) {
 		return 'true';
 	} else {
 		return 'false';
