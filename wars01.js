@@ -81,16 +81,26 @@
 
 
 //Задача century, учитывая год возвращать столетие в котором он нахоится.
-function century(year) {
-	let num = year / 100;
-	let century = Math.ceil(num);
-	return century;
+// function century(year) {
+// 	let num = year / 100;
+// 	let century = Math.ceil(num);
+// 	return century;
+// }
+
+// console.log(century(1705));//, 18, 'Testing for year 1705'
+// console.log(century(1900));//, 19, 'Testing for year 1900
+// console.log(century(1601));//, 17, 'Testing for year 1601
+// console.log(century(2000));//, 20, 'Testing for year 2000
+// console.log(century(89));//, 1, 'Testing for year 89
+
+
+//функция, которая преобразует данное логическое значение в его строковое представление.
+function booleanToString(b) {
+	if (b == true) {
+		return 'true';
+	} else {
+		return 'false';
+	}
 }
-
-console.log(century(1705));//, 18, 'Testing for year 1705'
-console.log(century(1900));//, 19, 'Testing for year 1900
-console.log(century(1601));//, 17, 'Testing for year 1601
-console.log(century(2000));//, 20, 'Testing for year 2000
-console.log(century(89));//, 1, 'Testing for year 89
-
-
+console.log(booleanToString(true));//, "true", 'When we pass in true, we want the string "true" as output'
+console.log(booleanToString(false));//, "false", 'When we pass in false, we want the string "false" as output'
