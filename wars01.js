@@ -148,12 +148,25 @@
 
 
 //функция перевертыш
-const reverseSeq = n => {
-	let arr = [];
+// const reverseSeq = n => {
+// 	let arr = [];
 
-	for (let i = 1; i <= n; i++) {
-		arr.push(i);
+// 	for (let i = 1; i <= n; i++) {
+// 		arr.push(i);
+// 	}
+
+// 	return arr.reverse();
+// };
+
+
+//функция принимающая ответ да или нет
+function boolToWord(bool) {
+	if (bool) {
+		return 'Yes';
+	} else {
+		return 'No';
 	}
+}
 
-	return arr.reverse();
-};
+console.log(boolToWord(true));//, 'Yes'
+console.log(boolToWord(false));//, 'No'
