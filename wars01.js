@@ -106,15 +106,29 @@
 // console.log(booleanToString(false));//, "false", 'When we pass in false, we want the string "false" as output'
 
 
+//function sumMix складывает числа и строчные числа
+// function sumMix(x) {
+// 	let sum = 0;
+// 	for (let elem of x) {
+// 		sum += +elem;
+// 	}
+// 	return sum;
+// }
 
-function sumMix(x) {
-	let sum = 0;
+// console.log(sumMix([9, 3, '7', '3']));//, 22
+// console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]));//, 42
+// console.log(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2, '0']));//, 41 
+
+
+//
+function grow(x) {
+	let sum = 1;
 	for (let elem of x) {
-		sum += +elem;
+		sum *= elem;
 	}
 	return sum;
 }
 
-console.log(sumMix([9, 3, '7', '3']));//, 22
-console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]));//, 42 
-console.log(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2, '0']));//, 41 
+console.log(grow([1, 2, 3]));//, 6
+console.log(grow([4, 1, 1, 1, 4]));//, 16 
+console.log(grow([2, 2, 2, 2, 2, 2]));//, 64
