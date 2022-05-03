@@ -160,13 +160,30 @@
 
 
 //функция принимающая ответ да или нет
-function boolToWord(bool) {
-	if (bool) {
-		return 'Yes';
+// function boolToWord(bool) {
+// 	if (bool) {
+// 		return 'Yes';
+// 	} else {
+// 		return 'No';
+// 	}
+// }
+
+// console.log(boolToWord(true));//, 'Yes'
+// console.log(boolToWord(false));//, 'No'
+
+
+//
+function makeNegative(num) {
+	let sum = 0;
+	if (num > 0) {
+		return sum - num;
 	} else {
-		return 'No';
+		return num;
 	}
 }
 
-console.log(boolToWord(true));//, 'Yes'
-console.log(boolToWord(false));//, 'No'
+console.log(makeNegative(42));//-42
+console.log(makeNegative(1));    // return -1
+console.log(makeNegative(-5));   // return -5
+console.log(makeNegative(0));    // return 0
+console.log(makeNegative(0.12)); // return -0.12
