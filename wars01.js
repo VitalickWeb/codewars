@@ -117,7 +117,7 @@
 
 // console.log(sumMix([9, 3, '7', '3']));//, 22
 // console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]));//, 42
-// console.log(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2, '0']));//, 41 
+// console.log(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2, '0']));//, 41
 
 
 //multipl num
@@ -130,20 +130,30 @@
 // }
 
 // console.log(grow([1, 2, 3]));//, 6
-// console.log(grow([4, 1, 1, 1, 4]));//, 16 
+// console.log(grow([4, 1, 1, 1, 4]));//, 16
 // console.log(grow([2, 2, 2, 2, 2, 2]));//, 64
 
 
 //задача можно добратся до места или нет
-const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-	if (mpg * fuelLeft >= distanceToPump) {//вопрос в том что доедет, и еще может остаться топливо
-		return true;
-	} else {
-		return false;
+// const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+// 	if (mpg * fuelLeft >= distanceToPump) {//вопрос в том что доедет, и еще может остаться топливо
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// };
+
+// console.log(zeroFuel(50, 25, 2));//, true
+// console.log(zeroFuel(100, 50, 3));//, false
+
+
+//функция перевертыш
+const reverseSeq = n => {
+	let arr = [];
+
+	for (let i = 1; i <= n; i++) {
+		arr.push(i);
 	}
+
+	return arr.reverse();
 };
-
-console.log(zeroFuel(50, 25, 2));//, true
-console.log(zeroFuel(100, 50, 3));//, false
-
-
