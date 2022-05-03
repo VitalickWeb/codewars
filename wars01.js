@@ -95,12 +95,26 @@
 
 
 //функция, которая преобразует данное логическое значение в его строковое представление.
-function booleanToString(b) {
-	if (b === true) {
-		return 'true';
-	} else {
-		return 'false';
+// function booleanToString(b) {
+// 	if (b === true) {
+// 		return 'true';
+// 	} else {
+// 		return 'false';
+// 	}
+// }
+// console.log(booleanToString(true));//, "true", 'When we pass in true, we want the string "true" as output'
+// console.log(booleanToString(false));//, "false", 'When we pass in false, we want the string "false" as output'
+
+
+
+function sumMix(x) {
+	let sum = 0;
+	for (let elem of x) {
+		sum += +elem;
 	}
+	return sum;
 }
-console.log(booleanToString(true));//, "true", 'When we pass in true, we want the string "true" as output'
-console.log(booleanToString(false));//, "false", 'When we pass in false, we want the string "false" as output'
+
+console.log(sumMix([9, 3, '7', '3']));//, 22
+console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]));//, 42 
+console.log(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2, '0']));//, 41 
