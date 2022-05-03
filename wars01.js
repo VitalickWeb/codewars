@@ -120,15 +120,30 @@
 // console.log(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2, '0']));//, 41 
 
 
-//
-function grow(x) {
-	let sum = 1;
-	for (let elem of x) {
-		sum *= elem;
-	}
-	return sum;
-}
+//multipl num
+// function grow(x) {
+// 	let sum = 1;
+// 	for (let elem of x) {
+// 		sum *= elem;
+// 	}
+// 	return sum;
+// }
 
-console.log(grow([1, 2, 3]));//, 6
-console.log(grow([4, 1, 1, 1, 4]));//, 16 
-console.log(grow([2, 2, 2, 2, 2, 2]));//, 64
+// console.log(grow([1, 2, 3]));//, 6
+// console.log(grow([4, 1, 1, 1, 4]));//, 16 
+// console.log(grow([2, 2, 2, 2, 2, 2]));//, 64
+
+
+//задача можно добратся до места или нет
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+	if (mpg * fuelLeft >= distanceToPump) {//вопрос в том что доедет, и еще может остаться топливо
+		return true;
+	} else {
+		return false;
+	}
+};
+
+console.log(zeroFuel(50, 25, 2));//, true
+console.log(zeroFuel(100, 50, 3));//, false
+
+
