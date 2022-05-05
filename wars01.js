@@ -190,33 +190,51 @@
 
 
 //Сумма без наибольшего и наименьшего числа
-function sumArray(array) {
-	let sumArr = 0;
+// function sumArray(array) {
+// 	let sumArr = 0;
 
-	if (array === null || array === undefined || array.length <= 2) {
-		return 0;
+// 	if (array === null || array === undefined || array.length <= 2) {
+// 		return 0;
+// 	} else {
+// 		let min = Math.min.apply(null, array);
+// 		let indexMin = array.indexOf(min);
+// 		array.splice(indexMin, 1);
+
+// 		let max = Math.max.apply(null, array);
+// 		let indexMax = array.indexOf(max);
+// 		array.splice(indexMax, 1);
+
+// 		for (let elem of array) {
+// 			sumArr += elem;
+// 		}
+// 	}
+
+// 	return sumArr;
+// }
+
+// console.log(sumArray(null), 0);
+// console.log(sumArray([]), 0);
+// console.log(sumArray([3]), 0);
+// console.log(sumArray([3, 5]), 0);
+// console.log(sumArray([6, 2, 1, 8, 10]), 16);
+// console.log(sumArray([0, 1, 6, 10, 10]), 17);
+// console.log(sumArray([-6, -20, -1, -10, -12]), -28);
+// console.log(sumArray([-6, 20, -1, 10, -12]), 3);
+
+
+//Определяем выживет герой или нет
+function hero(bullets, dragons) {
+	let twoBullets = 2;
+	if (bullets >= dragons * twoBullets) {
+		return true;
 	} else {
-		let min = Math.min.apply(null, array);
-		let indexMin = array.indexOf(min);
-		array.splice(indexMin, 1);
-
-		let max = Math.max.apply(null, array);
-		let indexMax = array.indexOf(max);
-		array.splice(indexMax, 1);
-
-		for (let elem of array) {
-			sumArr += elem;
-		}
+		return false;
 	}
-
-	return sumArr;
 }
 
-console.log(sumArray(null), 0);
-console.log(sumArray([]), 0);
-console.log(sumArray([3]), 0);
-console.log(sumArray([3, 5]), 0);
-console.log(sumArray([6, 2, 1, 8, 10]), 16);
-console.log(sumArray([0, 1, 6, 10, 10]), 17);
-console.log(sumArray([-6, -20, -1, -10, -12]), -28);
-console.log(sumArray([-6, 20, -1, 10, -12]), 3);
+console.log(hero(10, 5), true);
+console.log(hero(7, 4), false);
+console.log(hero(4, 5), false);
+console.log(hero(100, 40), true);
+console.log(hero(1500, 751), false);
+console.log(hero(0, 1), false);
