@@ -172,18 +172,51 @@
 // console.log(boolToWord(false));//, 'No'
 
 
-//
-function makeNegative(num) {
-	let sum = 0;
-	if (num > 0) {
-		return sum - num;
+//функция makeNegative из положительного числа, делает отрицательное
+// function makeNegative(num) {
+// 	let sum = 0;
+// 	if (num > 0) {
+// 		return sum - num;
+// 	} else {
+// 		return num;
+// 	}
+// }
+
+// console.log(makeNegative(42));//-42
+// console.log(makeNegative(1));    // return -1
+// console.log(makeNegative(-5));   // return -5
+// console.log(makeNegative(0));    // return 0
+// console.log(makeNegative(0.12)); // return -0.12
+
+
+//Сумма без наибольшего и наименьшего числа
+function sumArray(array) {
+	let sumArr = 0;
+
+	if (array === null || array === undefined || array.length <= 2) {
+		return 0;
 	} else {
-		return num;
+		let min = Math.min.apply(null, array);
+		let indexMin = array.indexOf(min);
+		array.splice(indexMin, 1);
+
+		let max = Math.max.apply(null, array);
+		let indexMax = array.indexOf(max);
+		array.splice(indexMax, 1);
+
+		for (let elem of array) {
+			sumArr += elem;
+		}
 	}
+
+	return sumArr;
 }
 
-console.log(makeNegative(42));//-42
-console.log(makeNegative(1));    // return -1
-console.log(makeNegative(-5));   // return -5
-console.log(makeNegative(0));    // return 0
-console.log(makeNegative(0.12)); // return -0.12
+console.log(sumArray(null), 0);
+console.log(sumArray([]), 0);
+console.log(sumArray([3]), 0);
+console.log(sumArray([3, 5]), 0);
+console.log(sumArray([6, 2, 1, 8, 10]), 16);
+console.log(sumArray([0, 1, 6, 10, 10]), 17);
+console.log(sumArray([-6, -20, -1, -10, -12]), -28);
+console.log(sumArray([-6, 20, -1, 10, -12]), 3);
