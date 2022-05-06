@@ -241,26 +241,45 @@
 
 
 //Подсчет очков команды в чемпионате
-function points(games) {
-	let sum = 0;
-	for (let elem of games) {
-		let arr = elem.split(':');
+// function points(games) {
+// 	let sum = 0;
+// 	for (let elem of games) {
+// 		let arr = elem.split(':');
 
-		if (+arr[0] > +arr[1]) {
-			sum += 3;
-		} else if (+arr[0] == +arr[1]) {
-			sum += 1;
-		}
+// 		if (+arr[0] > +arr[1]) {
+// 			sum += 3;
+// 		} else if (+arr[0] == +arr[1]) {
+// 			sum += 1;
+// 		}
+// 	}
+// 	return sum;
+// }
+
+// console.log(points(["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"]), 30);
+// console.log(points(["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"]), 10);
+// console.log(points(["0:1", "0:2", "0:3", "0:4", "1:2", "1:3", "1:4", "2:3", "2:4", "3:4"]), 0);
+// console.log(points(["1:0", "2:0", "3:0", "4:0", "2:1", "1:3", "1:4", "2:3", "2:4", "3:4"]), 15);
+// console.log(points(["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:4"]), 12);
+
+
+//Возврат цифр в порядке убывания
+function descendingOrder(n) {
+	let arr = String(n).split('');
+
+	if (arr.length == 1) {
+		return +arr.join('');
+	} else {
+		let res = arr.sort((a, b) => b - a);
+		return +res.join('');
 	}
-	return sum;
 }
 
-console.log(points(["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"]), 30);
-console.log(points(["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"]), 10);
-console.log(points(["0:1", "0:2", "0:3", "0:4", "1:2", "1:3", "1:4", "2:3", "2:4", "3:4"]), 0);
-console.log(points(["1:0", "2:0", "3:0", "4:0", "2:1", "1:3", "1:4", "2:3", "2:4", "3:4"]), 15);
-console.log(points(["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:4"]), 12);
+console.log(descendingOrder(0), 0);
+console.log(descendingOrder(1), 1);
+console.log(descendingOrder(111), 111);
+console.log(descendingOrder(15), 51);
+console.log(descendingOrder(1021), 2110);
+console.log(descendingOrder(123456789), 987654321);
 
-
-
-
+//1)получаем число в параметр функции
+//2)проверим числа на длинну и на сравнение используем цикл
