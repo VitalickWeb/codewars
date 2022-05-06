@@ -263,23 +263,35 @@
 
 
 //Возврат цифр в порядке убывания
-function descendingOrder(n) {
-	let arr = String(n).split('');
+// function descendingOrder(n) {
+// 	let arr = String(n).split('');
 
-	if (arr.length == 1) {
-		return +arr.join('');
+// 	if (arr.length == 1) {
+// 		return +arr.join('');
+// 	} else {
+// 		let res = arr.sort((a, b) => b - a);
+// 		return +res.join('');
+// 	}
+// }
+
+// console.log(descendingOrder(0), 0);
+// console.log(descendingOrder(1), 1);
+// console.log(descendingOrder(111), 111);
+// console.log(descendingOrder(15), 51);
+// console.log(descendingOrder(1021), 2110);
+// console.log(descendingOrder(123456789), 987654321);
+
+function opposite(number) {
+	if (number > 0) {
+		return -number;
+	} else if (number < 0) {
+		return -number;
 	} else {
-		let res = arr.sort((a, b) => b - a);
-		return +res.join('');
+		return 0;
 	}
 }
 
-console.log(descendingOrder(0), 0);
-console.log(descendingOrder(1), 1);
-console.log(descendingOrder(111), 111);
-console.log(descendingOrder(15), 51);
-console.log(descendingOrder(1021), 2110);
-console.log(descendingOrder(123456789), 987654321);
-
-//1)получаем число в параметр функции
-//2)проверим числа на длинну и на сравнение используем цикл
+console.log(opposite(1), -1);
+console.log(opposite(-1), 1);
+console.log(opposite(14), -14);
+console.log(opposite(-34), 34);
