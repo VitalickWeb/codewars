@@ -223,18 +223,44 @@
 
 
 //Определяем выживет герой или нет
-function hero(bullets, dragons) {
-	let twoBullets = 2;
-	if (bullets >= dragons * twoBullets) {
-		return true;
-	} else {
-		return false;
+// function hero(bullets, dragons) {
+// 	let twoBullets = 2;
+// 	if (bullets >= dragons * twoBullets) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
+
+// console.log(hero(10, 5), true);
+// console.log(hero(7, 4), false);
+// console.log(hero(4, 5), false);
+// console.log(hero(100, 40), true);
+// console.log(hero(1500, 751), false);
+// console.log(hero(0, 1), false);
+
+
+//Подсчет очков команды в чемпионате
+function points(games) {
+	let sum = 0;
+	for (let elem of games) {
+		let arr = elem.split(':');
+
+		if (+arr[0] > +arr[1]) {
+			sum += 3;
+		} else if (+arr[0] == +arr[1]) {
+			sum += 1;
+		}
 	}
+	return sum;
 }
 
-console.log(hero(10, 5), true);
-console.log(hero(7, 4), false);
-console.log(hero(4, 5), false);
-console.log(hero(100, 40), true);
-console.log(hero(1500, 751), false);
-console.log(hero(0, 1), false);
+console.log(points(["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"]), 30);
+console.log(points(["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"]), 10);
+console.log(points(["0:1", "0:2", "0:3", "0:4", "1:2", "1:3", "1:4", "2:3", "2:4", "3:4"]), 0);
+console.log(points(["1:0", "2:0", "3:0", "4:0", "2:1", "1:3", "1:4", "2:3", "2:4", "3:4"]), 15);
+console.log(points(["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:4"]), 12);
+
+
+
+
