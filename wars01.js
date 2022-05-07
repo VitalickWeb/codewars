@@ -281,17 +281,55 @@
 // console.log(descendingOrder(1021), 2110);
 // console.log(descendingOrder(123456789), 987654321);
 
-function opposite(number) {
-	if (number > 0) {
-		return -number;
-	} else if (number < 0) {
-		return -number;
-	} else {
-		return 0;
+// function opposite(number) {
+// 	if (number > 0) {
+// 		return -number;
+// 	} else if (number < 0) {
+// 		return -number;
+// 	} else {
+// 		return 0;
+// 	}
+// }
+
+// console.log(opposite(1), -1);
+// console.log(opposite(-1), 1);
+// console.log(opposite(14), -14);
+// console.log(opposite(-34), 34);
+
+
+
+function oddOrEven(array) {
+	let sum = 0;
+
+	for (let elem of array) {
+		sum += elem;
 	}
+
+	if (sum % 2 == 0) {
+		return 'even';
+	} else if (sum % 2 != 0) {
+		return 'odd';
+	}
+
+	return sum;
 }
 
-console.log(opposite(1), -1);
-console.log(opposite(-1), 1);
-console.log(opposite(14), -14);
-console.log(opposite(-34), 34);
+console.log(oddOrEven([0]), 'even')
+console.log(oddOrEven([1]), 'odd')
+console.log(oddOrEven([]), 'even')
+
+console.log(oddOrEven([0, 1, 5]), 'even')
+console.log(oddOrEven([0, 1, 3]), 'even')
+console.log(oddOrEven([1023, 1, 2]), 'even')
+
+console.log(oddOrEven([0, -1, -5]), 'even')
+console.log(oddOrEven([0, -1, -3]), 'even')
+console.log(oddOrEven([-1023, 1, -2]), 'even')
+
+console.log(oddOrEven([0, 1, 2]), 'odd')
+console.log(oddOrEven([0, 1, 4]), 'odd')
+console.log(oddOrEven([1023, 1, 3]), 'odd')
+
+console.log(oddOrEven([0, -1, 2]), 'odd')
+console.log(oddOrEven([0, 1, -4]), 'odd')
+console.log(oddOrEven([-1023, -1, 3]), 'odd')
