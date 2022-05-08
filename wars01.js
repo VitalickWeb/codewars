@@ -298,38 +298,55 @@
 
 
 
-function oddOrEven(array) {
-	let sum = 0;
+// function oddOrEven(array) {
+// 	let sum = 0;
 
-	for (let elem of array) {
-		sum += elem;
+// 	for (let elem of array) {
+// 		sum += elem;
+// 	}
+
+// 	if (sum % 2 == 0) {
+// 		return 'even';
+// 	} else if (sum % 2 != 0) {
+// 		return 'odd';
+// 	}
+
+// 	return sum;
+// }
+
+// console.log(oddOrEven([0]), 'even')
+// console.log(oddOrEven([1]), 'odd')
+// console.log(oddOrEven([]), 'even')
+
+// console.log(oddOrEven([0, 1, 5]), 'even')
+// console.log(oddOrEven([0, 1, 3]), 'even')
+// console.log(oddOrEven([1023, 1, 2]), 'even')
+
+// console.log(oddOrEven([0, -1, -5]), 'even')
+// console.log(oddOrEven([0, -1, -3]), 'even')
+// console.log(oddOrEven([-1023, 1, -2]), 'even')
+
+// console.log(oddOrEven([0, 1, 2]), 'odd')
+// console.log(oddOrEven([0, 1, 4]), 'odd')
+// console.log(oddOrEven([1023, 1, 3]), 'odd')
+
+// console.log(oddOrEven([0, -1, 2]), 'odd')
+// console.log(oddOrEven([0, 1, -4]), 'odd')
+// console.log(oddOrEven([-1023, -1, 3]), 'odd')
+
+function filter_list(l) {
+	let newArr = [];
+
+	for (let elem of l) {
+		if (elem === Number(elem)) {
+			newArr.push(elem);
+		}
 	}
 
-	if (sum % 2 == 0) {
-		return 'even';
-	} else if (sum % 2 != 0) {
-		return 'odd';
-	}
-
-	return sum;
+	return newArr;
 }
 
-console.log(oddOrEven([0]), 'even')
-console.log(oddOrEven([1]), 'odd')
-console.log(oddOrEven([]), 'even')
+console.log(filter_list([1, 2, 'a', 'b']), [1, 2], 'For input [1,2,"a","b"]');
+console.log(filter_list([1, 'a', 'b', 0, 15]), [1, 0, 15], 'For input [1,"a","b",0,15]');
+console.log(filter_list([1, 2, 'aasf', '1', '123', 123]), [1, 2, 123], 'For input [1,2,"aasf","1","123",123]');
 
-console.log(oddOrEven([0, 1, 5]), 'even')
-console.log(oddOrEven([0, 1, 3]), 'even')
-console.log(oddOrEven([1023, 1, 2]), 'even')
-
-console.log(oddOrEven([0, -1, -5]), 'even')
-console.log(oddOrEven([0, -1, -3]), 'even')
-console.log(oddOrEven([-1023, 1, -2]), 'even')
-
-console.log(oddOrEven([0, 1, 2]), 'odd')
-console.log(oddOrEven([0, 1, 4]), 'odd')
-console.log(oddOrEven([1023, 1, 3]), 'odd')
-
-console.log(oddOrEven([0, -1, 2]), 'odd')
-console.log(oddOrEven([0, 1, -4]), 'odd')
-console.log(oddOrEven([-1023, -1, 3]), 'odd')
