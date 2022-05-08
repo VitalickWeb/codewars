@@ -334,19 +334,27 @@
 // console.log(oddOrEven([0, 1, -4]), 'odd')
 // console.log(oddOrEven([-1023, -1, 3]), 'odd')
 
-function filter_list(l) {
-	let newArr = [];
+// function filter_list(l) {
+// 	let newArr = [];
 
-	for (let elem of l) {
-		if (elem === Number(elem)) {
-			newArr.push(elem);
-		}
-	}
+// 	for (let elem of l) {
+// 		if (elem === Number(elem)) {
+// 			newArr.push(elem);
+// 		}
+// 	}
 
-	return newArr;
+// 	return newArr;
+// }
+
+// console.log(filter_list([1, 2, 'a', 'b']), [1, 2], 'For input [1,2,"a","b"]');
+// console.log(filter_list([1, 'a', 'b', 0, 15]), [1, 0, 15], 'For input [1,"a","b",0,15]');
+// console.log(filter_list([1, 2, 'aasf', '1', '123', 123]), [1, 2, 123], 'For input [1,2,"aasf","1","123",123]');
+
+var stringToNumber = function (str) {
+	return Number(str);
 }
 
-console.log(filter_list([1, 2, 'a', 'b']), [1, 2], 'For input [1,2,"a","b"]');
-console.log(filter_list([1, 'a', 'b', 0, 15]), [1, 0, 15], 'For input [1,"a","b",0,15]');
-console.log(filter_list([1, 2, 'aasf', '1', '123', 123]), [1, 2, 123], 'For input [1,2,"aasf","1","123",123]');
-
+console.log(stringToNumber("1234"), 1234)
+console.log(stringToNumber("605"), 605)
+console.log(stringToNumber("1405"), 1405)
+console.log(stringToNumber("-7"), -7)
