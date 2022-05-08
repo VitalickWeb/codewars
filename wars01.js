@@ -350,11 +350,36 @@
 // console.log(filter_list([1, 'a', 'b', 0, 15]), [1, 0, 15], 'For input [1,"a","b",0,15]');
 // console.log(filter_list([1, 2, 'aasf', '1', '123', 123]), [1, 2, 123], 'For input [1,2,"aasf","1","123",123]');
 
-var stringToNumber = function (str) {
-	return Number(str);
+
+
+// var stringToNumber = function (str) {
+// 	return Number(str);
+// }
+
+// console.log(stringToNumber("1234"), 1234);
+// console.log(stringToNumber("605"), 605);
+// console.log(stringToNumber("1405"), 1405);
+// console.log(stringToNumber("-7"), -7);
+
+
+
+
+function squareDigits(num) {
+	let arr = String(num).split('');
+	let newArr = [];
+
+	for (let elem of arr) {
+		let res = elem * elem;
+		newArr.push(res);
+	}
+	let result = newArr.join('');
+
+	return +result;
 }
 
-console.log(stringToNumber("1234"), 1234)
-console.log(stringToNumber("605"), 605)
-console.log(stringToNumber("1405"), 1405)
-console.log(stringToNumber("-7"), -7)
+console.log(squareDigits(3212), 9414);
+console.log(squareDigits(2112), 4114);
+console.log(squareDigits(0), 0);
+
+
+
