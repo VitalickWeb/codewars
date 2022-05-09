@@ -381,19 +381,25 @@
 // console.log(squareDigits(0), 0);
 
 
-function highAndLow(numbers) {
-	let arr = numbers.split(' ');
-	let min = Math.min.apply(null, arr);
-	let max = Math.max.apply(null, arr);
+// function highAndLow(numbers) {
+// 	let arr = numbers.split(' ');
+// 	let min = Math.min.apply(null, arr);
+// 	let max = Math.max.apply(null, arr);
 
-	let newArr = [];
-	newArr.push(max, min);
+// 	let newArr = [];
+// 	newArr.push(max, min);
 
-	return newArr.join(' ');
+// 	return newArr.join(' ');
+// }
+
+// console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9");
+// console.log(highAndLow("1 2 3"), "3 1");
+
+
+
+function greet(name) {
+	return `Hello, ${name} how are you doing today?`;
 }
 
-console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9");
-console.log(highAndLow("1 2 3"), "3 1");
-
-
-
+console.log(greet("Ryan"), "Hello, Ryan how are you doing today?");
+console.log(greet("Shingles"), "Hello, Shingles how are you doing today?");
