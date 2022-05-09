@@ -362,24 +362,38 @@
 // console.log(stringToNumber("-7"), -7);
 
 
+//sum of squares
+// function squareDigits(num) {
+// 	let arr = String(num).split('');
+// 	let newArr = [];
+
+// 	for (let elem of arr) {
+// 		let res = elem * elem;
+// 		newArr.push(res);
+// 	}
+// 	let result = newArr.join('');
+
+// 	return +result;
+// }
+
+// console.log(squareDigits(3212), 9414);
+// console.log(squareDigits(2112), 4114);
+// console.log(squareDigits(0), 0);
 
 
-function squareDigits(num) {
-	let arr = String(num).split('');
+function highAndLow(numbers) {
+	let arr = numbers.split(' ');
+	let min = Math.min.apply(null, arr);
+	let max = Math.max.apply(null, arr);
+
 	let newArr = [];
+	newArr.push(max, min);
 
-	for (let elem of arr) {
-		let res = elem * elem;
-		newArr.push(res);
-	}
-	let result = newArr.join('');
-
-	return +result;
+	return newArr.join(' ');
 }
 
-console.log(squareDigits(3212), 9414);
-console.log(squareDigits(2112), 4114);
-console.log(squareDigits(0), 0);
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9");
+console.log(highAndLow("1 2 3"), "3 1");
 
 
 
