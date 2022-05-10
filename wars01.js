@@ -436,18 +436,32 @@
 // console.log(betterThanAverage([29, 55, 74, 60, 11, 90, 67, 28], 21), false);
 
 
+//get middle index
+// function getMiddle(s) {
+// 	if (s.length % 2 != 0) {
+// 		let odd = Math.floor(s.length / 2);
+// 		return s[odd];
+// 	} else if (s.length % 2 == 0) {
+// 		let even = s.length / 2;
+// 		return s.slice(even - 1, even + 1);
+// 	}
+// }
 
-function getMiddle(s) {
-	if (s.length % 2 != 0) {
-		let odd = Math.floor(s.length / 2);
-		return s[odd];
-	} else if (s.length % 2 == 0) {
-		let even = s.length / 2;
-		return s.slice(even - 1, even + 1);
-	}
+// console.log(getMiddle("test"), "es");
+// console.log(getMiddle("testing"), "t");
+// console.log(getMiddle("middle"), "dd");
+// console.log(getMiddle("A"), "A");
+
+
+
+function removeChar(str) {
+	let arr = str.split('');
+	arr.shift() + arr.pop();
+	return arr.join('');
 }
 
-console.log(getMiddle("test"), "es");
-console.log(getMiddle("testing"), "t");
-console.log(getMiddle("middle"), "dd");
-console.log(getMiddle("A"), "A");
+console.log(removeChar('eloquent'), 'loquen');
+console.log(removeChar('country'), 'ountr');
+console.log(removeChar('person'), 'erso');
+console.log(removeChar('place'), 'lac');
+console.log(removeChar('ooopsss'), 'oopss');
