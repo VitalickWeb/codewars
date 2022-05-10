@@ -438,9 +438,13 @@
 
 
 function getMiddle(s) {
-	let arr = s.split('');
-	console.log(arr)
-	//return arr;
+	if (s.length % 2 != 0) {
+		let odd = Math.floor(s.length / 2);
+		return s[odd];
+	} else if (s.length % 2 == 0) {
+		let even = s.length / 2;
+		return s.slice(even - 1, even + 1);
+	}
 }
 
 console.log(getMiddle("test"), "es");
