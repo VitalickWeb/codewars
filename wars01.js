@@ -485,11 +485,26 @@
 
 
 
-function solution(str) {
-	return str.split('').reverse().join('');
+// function solution(str) {
+// 	return str.split('').reverse().join('');
+// }
+
+// console.log(solution('world'), 'dlrow');
+// console.log(solution('hello'), 'olleh');
+// console.log(solution(''), '');
+// console.log(solution('h'), 'h');
+
+
+function past(h, m, s) {
+	let date1 = new Date().setHours(0, 0, 0);
+	let date2 = new Date().setHours(h, m, s);
+
+	let diff = date2 - date1;
+	return diff;
 }
 
-console.log(solution('world'), 'dlrow');
-console.log(solution('hello'), 'olleh');
-console.log(solution(''), '');
-console.log(solution('h'), 'h');
+console.log(past(0, 1, 1), 61000)
+console.log(past(1, 1, 1), 3661000)
+console.log(past(0, 0, 0), 0)
+console.log(past(1, 0, 1), 3601000)
+console.log(past(1, 0, 0), 3600000)
