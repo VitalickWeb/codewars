@@ -511,29 +511,48 @@
 
 
 
-function accum(s) {
-	let arr = s.split('');
+// function accum(s) {
+// 	let arr = s.split('');
+// 	let newStr = '';
+// 	for (let i = 0; i < arr.length; i++) {
+// 		let str = '';
+
+// 		for (let j = 0; j <= i; j++) {
+// 			str += arr[i];
+// 		}
+
+// 		if (i != str[i].length - 1) {
+// 			newStr += '-';
+// 		}
+// 		newStr += str[0].toUpperCase() + str.toLowerCase().slice(1, str.length);
+
+// 		console.log(i, str[i], str.length - 1);
+// 	}
+// 	return newStr;
+// }
+
+// console.log(accum("ZpglnRxqenU"), "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu");
+// console.log(accum("NyffsGeyylB"), "N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb");
+// console.log(accum("MjtkuBovqrU"), "M-Jj-Ttt-Kkkk-Uuuuu-Bbbbbb-Ooooooo-Vvvvvvvv-Qqqqqqqqq-Rrrrrrrrrr-Uuuuuuuuuuu");
+// console.log(accum("EvidjUnokmM"), "E-Vv-Iii-Dddd-Jjjjj-Uuuuuu-Nnnnnnn-Oooooooo-Kkkkkkkkk-Mmmmmmmmmm-Mmmmmmmmmmm");
+// console.log(accum("HbideVbxncC"), "H-Bb-Iii-Dddd-Eeeee-Vvvvvv-Bbbbbbb-Xxxxxxxx-Nnnnnnnnn-Cccccccccc-Ccccccccccc");
+
+
+
+function disemvowel(str) {
+	let arr = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u', 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'];
+
+	let arrStr = str.split('');
 	let newStr = '';
-	for (let i = 0; i < arr.length; i++) {
-		let str = '';
+	console.log(arrStr);
 
-		for (let j = 0; j <= i; j++) {
-			str += arr[i];
-		}
-
-		if (i != str[i].length - 1) {
-			newStr += '-';
-		}
-		newStr += str[0].toUpperCase() + str.toLowerCase().slice(1, str.length);
-
-		console.log(i, str[i], str.length - 1);
+	for (let elem of arr) {
+		console.log(elem);
 	}
+
 	return newStr;
 }
 
-console.log(accum("ZpglnRxqenU"), "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu");
-console.log(accum("NyffsGeyylB"), "N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb");
-console.log(accum("MjtkuBovqrU"), "M-Jj-Ttt-Kkkk-Uuuuu-Bbbbbb-Ooooooo-Vvvvvvvv-Qqqqqqqqq-Rrrrrrrrrr-Uuuuuuuuuuu");
-console.log(accum("EvidjUnokmM"), "E-Vv-Iii-Dddd-Jjjjj-Uuuuuu-Nnnnnnn-Oooooooo-Kkkkkkkkk-Mmmmmmmmmm-Mmmmmmmmmmm");
-console.log(accum("HbideVbxncC"), "H-Bb-Iii-Dddd-Eeeee-Vvvvvv-Bbbbbbb-Xxxxxxxx-Nnnnnnnnn-Cccccccccc-Ccccccccccc");
-
+console.log(disemvowel("This website is for losers LOL!"), "Ths wbst s fr lsrs LL!")
+//console.log(disemvowel("No offense but,\nYour writing is among the worst I've ever read"), "N ffns bt,\nYr wrtng s mng th wrst 'v vr rd")
+console.log(disemvowel("What are you, a communist?"), "Wht r y,  cmmnst?")
