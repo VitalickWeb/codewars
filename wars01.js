@@ -495,16 +495,45 @@
 // console.log(solution('h'), 'h');
 
 
-function past(h, m, s) {
-	let date1 = new Date().setHours(0, 0, 0);
-	let date2 = new Date().setHours(h, m, s);
+// function past(h, m, s) {
+// 	let date1 = new Date().setHours(0, 0, 0);
+// 	let date2 = new Date().setHours(h, m, s);
 
-	let diff = date2 - date1;
-	return diff;
+// 	let diff = date2 - date1;
+// 	return diff;
+// }
+
+// console.log(past(0, 1, 1), 61000)
+// console.log(past(1, 1, 1), 3661000)
+// console.log(past(0, 0, 0), 0)
+// console.log(past(1, 0, 1), 3601000)
+// console.log(past(1, 0, 0), 3600000)
+
+
+
+function accum(s) {
+	let arr = s.split('');
+	let newStr = '';
+	for (let i = 0; i < arr.length; i++) {
+		let str = '';
+
+		for (let j = 0; j <= i; j++) {
+			str += arr[i];
+		}
+
+		if (i != str[i].length - 1) {
+			newStr += '-';
+		}
+		newStr += str[0].toUpperCase() + str.toLowerCase().slice(1, str.length);
+
+		console.log(i, str[i], str.length - 1);
+	}
+	return newStr;
 }
 
-console.log(past(0, 1, 1), 61000)
-console.log(past(1, 1, 1), 3661000)
-console.log(past(0, 0, 0), 0)
-console.log(past(1, 0, 1), 3601000)
-console.log(past(1, 0, 0), 3600000)
+console.log(accum("ZpglnRxqenU"), "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu");
+console.log(accum("NyffsGeyylB"), "N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb");
+console.log(accum("MjtkuBovqrU"), "M-Jj-Ttt-Kkkk-Uuuuu-Bbbbbb-Ooooooo-Vvvvvvvv-Qqqqqqqqq-Rrrrrrrrrr-Uuuuuuuuuuu");
+console.log(accum("EvidjUnokmM"), "E-Vv-Iii-Dddd-Jjjjj-Uuuuuu-Nnnnnnn-Oooooooo-Kkkkkkkkk-Mmmmmmmmmm-Mmmmmmmmmmm");
+console.log(accum("HbideVbxncC"), "H-Bb-Iii-Dddd-Eeeee-Vvvvvv-Bbbbbbb-Xxxxxxxx-Nnnnnnnnn-Cccccccccc-Ccccccccccc");
+
