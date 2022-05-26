@@ -512,13 +512,12 @@
 
 
 // function accum(s) {
-// 	let arr = s.split('');
 // 	let newStr = '';
-// 	for (let i = 0; i < arr.length; i++) {
+// 	for (let i = 0; i < s.length; i++) {
 // 		let str = '';
 
 // 		for (let j = 0; j <= i; j++) {
-// 			str += arr[i];
+// 			str += s[i];
 // 		}
 
 // 		if (i != str[i].length - 1) {
@@ -540,19 +539,28 @@
 
 
 function disemvowel(str) {
-	let arr = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u', 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'];
+	let vowels = [
+		'A', 'E', 'I', 'O', 'U',
+		'a', 'e', 'i', 'o', 'u'
+	];
 
+	let newArr = [];
 	let arrStr = str.split('');
-	let newStr = '';
-	console.log(arrStr);
 
-	for (let elem of arr) {
-		console.log(elem);
-	}
+	arrStr.filter((letter) => {
+		let res = vowels.indexOf(letter);
 
-	return newStr;
+		if (res == -1) {
+			newArr.push(letter);
+		}
+	});
+
+	return newArr.join('');
 }
 
-console.log(disemvowel("This website is for losers LOL!"), "Ths wbst s fr lsrs LL!")
-//console.log(disemvowel("No offense but,\nYour writing is among the worst I've ever read"), "N ffns bt,\nYr wrtng s mng th wrst 'v vr rd")
-console.log(disemvowel("What are you, a communist?"), "Wht r y,  cmmnst?")
+console.log(disemvowel("This website is for losers LOL!"), "/Ths wbst s fr lsrs LL!")
+console.log(disemvowel("No offense but,\nYour writing is among the worst I've ever read"), "N ffns bt,\nYr wrtng s mng th wrst 'v vr rd");
+console.log(disemvowel("What are you, a communist?"), "/Wht r y,  cmmnst?");
+
+
+
