@@ -538,29 +538,41 @@
 
 
 
-function disemvowel(str) {
-	let vowels = [
-		'A', 'E', 'I', 'O', 'U',
-		'a', 'e', 'i', 'o', 'u'
-	];
+// function disemvowel(str) {
+// 	let vowels = [
+// 		'A', 'E', 'I', 'O', 'U',
+// 		'a', 'e', 'i', 'o', 'u'
+// 	];
 
-	let newArr = [];
-	let arrStr = str.split('');
+// 	let newArr = [];
+// 	let arrStr = str.split('');
 
-	arrStr.filter((letter) => {
-		let res = vowels.indexOf(letter);
+// 	arrStr.filter((letter) => {
+// 		let res = vowels.indexOf(letter);
 
-		if (res == -1) {
-			newArr.push(letter);
-		}
-	});
+// 		if (res == -1) {
+// 			newArr.push(letter);
+// 		}
+// 	});
 
-	return newArr.join('');
+// 	return newArr.join('');
+// }
+
+// console.log(disemvowel("This website is for losers LOL!"), "/Ths wbst s fr lsrs LL!")
+// console.log(disemvowel("No offense but,\nYour writing is among the worst I've ever read"), "N ffns bt,\nYr wrtng s mng th wrst 'v vr rd");
+// console.log(disemvowel("What are you, a communist?"), "/Wht r y,  cmmnst?");
+
+
+
+function isTriangle(a, b, c) {
+	if (a + b <= c && a + c <= b && c + b <= a) {
+		return true;
+	}
+
+	return false;
 }
 
-console.log(disemvowel("This website is for losers LOL!"), "/Ths wbst s fr lsrs LL!")
-console.log(disemvowel("No offense but,\nYour writing is among the worst I've ever read"), "N ffns bt,\nYr wrtng s mng th wrst 'v vr rd");
-console.log(disemvowel("What are you, a communist?"), "/Wht r y,  cmmnst?");
-
+console.log(isTriangle(1, 2, 2), true);
+console.log(isTriangle(7, 2, 2), false);
 
 
