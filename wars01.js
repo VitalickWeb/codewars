@@ -577,17 +577,31 @@
 
 
 
-function solution(str, ending) {
-	return str.endsWith(ending);
+// function solution(str, ending) {
+// 	return str.endsWith(ending);
+// }
+
+// console.log(solution('abcde', 'cde'), true);
+// console.log(solution('abcde', 'abc'), false);
+// console.log(solution('samurai', 'ai'), true);
+// console.log(solution('samurai', 'urai'), true);
+
+
+
+function digitize(n) {
+	let strNumber = String(n);
+	let arrstrNumber = strNumber.split('').reverse().join('');
+	let numArr = [];
+
+	for (let i = 0; i < arrstrNumber.length; i++) {
+		console.log(arrstrNumber[i])
+		numArr.push(+arrstrNumber[i]);
+	}
+	return numArr;
 }
 
-console.log(solution('abcde', 'cde'), true);
-console.log(solution('abcde', 'abc'), false);
-console.log(solution('samurai', 'ai'), true);
-console.log(solution('samurai', 'urai'), true);
-
-
-
+console.log(digitize(35231), [1, 3, 2, 5, 3]);
+console.log(digitize(0), [0]);
 
 
 
