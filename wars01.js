@@ -564,15 +564,31 @@
 
 
 
-function isTriangle(a, b, c) {
-	if (a + b <= c && a + c <= b && c + b <= a) {
-		return true;
-	}
+// function isTriangle(a, b, c) {
+// 	if (a + b <= c && a + c <= b && c + b <= a) {
+// 		return false;
+// 	}
 
-	return false;
+// 	return true;
+// }
+
+// console.log(isTriangle(1, 2, 2), true);
+// console.log(isTriangle(7, 2, 2), false);
+
+
+
+function solution(str, ending) {
+	return str.endsWith(ending);
 }
 
-console.log(isTriangle(1, 2, 2), true);
-console.log(isTriangle(7, 2, 2), false);
+console.log(solution('abcde', 'cde'), true);
+console.log(solution('abcde', 'abc'), false);
+console.log(solution('samurai', 'ai'), true);
+console.log(solution('samurai', 'urai'), true);
+
+
+
+
+
 
 
