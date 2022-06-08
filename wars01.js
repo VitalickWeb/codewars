@@ -587,30 +587,32 @@
 // console.log(solution('samurai', 'urai'), true);
 
 
+// function digitize(n) {
+// 	let strNumber = String(n);
+// 	let arrstrNumber = strNumber.split('').reverse().join('');
+// 	let numArr = [];
 
-function digitize(n) {
-	let strNumber = String(n);
-	let arrstrNumber = strNumber.split('').reverse().join('');
-	let numArr = [];
+// 	for (let i = 0; i < arrstrNumber.length; i++) {
+// 		console.log(arrstrNumber[i])
+// 		numArr.push(+arrstrNumber[i]);
+// 	}
+// 	return numArr;
+// }
 
-	for (let i = 0; i < arrstrNumber.length; i++) {
-		console.log(arrstrNumber[i])
-		numArr.push(+arrstrNumber[i]);
-	}
-	return numArr;
+// console.log(digitize(35231), [1, 3, 2, 5, 3]);
+// console.log(digitize(0), [0]);
+
+
+function arrayDiff(a, b) {
+	return a.filter(elem => !b.includes(elem));
 }
 
-console.log(digitize(35231), [1, 3, 2, 5, 3]);
-console.log(digitize(0), [0]);
-
-
-
-
-
-
-
-
-
+console.log(arrayDiff([1, 2], [1]), [2], "a was [1,2], b was [1]");
+console.log(arrayDiff([1, 2, 2], [1]), [2, 2], "a was [1,2,2], b was [1]");
+console.log(arrayDiff([1, 2, 2], [2]), [1], "a was [1,2,2], b was [2]");
+console.log(arrayDiff([1, 2, 2], []), [1, 2, 2], "a was [1,2,2], b was []");
+console.log(arrayDiff([], [1, 2]), [], "a was [], b was [1,2]");
+console.log(arrayDiff([1, 2, 3], [1, 2]), [3], "a was [1,2,3], b was [1,2]");
 
 
 
