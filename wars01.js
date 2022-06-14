@@ -603,17 +603,30 @@
 // console.log(digitize(0), [0]);
 
 
-function arrayDiff(a, b) {
-	return a.filter(elem => !b.includes(elem));
+// function arrayDiff(a, b) {
+// 	return a.filter(elem => !b.includes(elem));
+// }
+
+// console.log(arrayDiff([1, 2], [1]), [2], "a was [1,2], b was [1]");
+// console.log(arrayDiff([1, 2, 2], [1]), [2, 2], "a was [1,2,2], b was [1]");
+// console.log(arrayDiff([1, 2, 2], [2]), [1], "a was [1,2,2], b was [2]");
+// console.log(arrayDiff([1, 2, 2], []), [1, 2, 2], "a was [1,2,2], b was []");
+// console.log(arrayDiff([], [1, 2]), [], "a was [], b was [1,2]");
+// console.log(arrayDiff([1, 2, 3], [1, 2]), [3], "a was [1,2,3], b was [1,2]");
+
+
+
+function number(array) {
+	let count = 1;
+	const newArr = [];
+
+	for (let i = 0; i < array.length; i++) {
+		newArr.push(count++ + ': ' + array[i]);
+	}
+
+	return newArr;
 }
 
-console.log(arrayDiff([1, 2], [1]), [2], "a was [1,2], b was [1]");
-console.log(arrayDiff([1, 2, 2], [1]), [2, 2], "a was [1,2,2], b was [1]");
-console.log(arrayDiff([1, 2, 2], [2]), [1], "a was [1,2,2], b was [2]");
-console.log(arrayDiff([1, 2, 2], []), [1, 2, 2], "a was [1,2,2], b was []");
-console.log(arrayDiff([], [1, 2]), [], "a was [], b was [1,2]");
-console.log(arrayDiff([1, 2, 3], [1, 2]), [3], "a was [1,2,3], b was [1,2]");
-
-
-
+console.log(number([]), [], 'Empty array should return empty array');
+console.log(number(["a", "b", "c"]), ["1: a", "2: b", "3: c"], 'Return the correct line numbers');
 
