@@ -632,27 +632,42 @@
 
 
 
-function duplicateCount(text) {
-	let newArr = [];
-	text.toLowerCase().split('').filter((t, idx) => {
-		let res = 0;
-		if (t === t) {
-			res += text.indexOf(t);
-		}
-		if (idx !== res) {
-			newArr.push(res);
-		}
-	});
+// function duplicateCount(text) {
+// 	let newArr = [];
+// 	text.toLowerCase().split('').filter((t, idx) => {
+// 		let res = 0;
+// 		if (t === t) {
+// 			res += text.indexOf(t);
+// 		}
+// 		if (idx !== res) {
+// 			newArr.push(res);
+// 		}
+// 	});
 
-	const uniqSet = new Set(newArr);
-	return [...uniqSet].length;
+// 	const uniqSet = new Set(newArr);
+// 	return [...uniqSet].length;
+// }
+
+// console.log(duplicateCount(""), 0);
+// console.log(duplicateCount("abcde"), 0);
+// console.log(duplicateCount("aabbcde"), 2);
+// console.log(duplicateCount("aabBcde"), 2, "should ignore case");
+// console.log(duplicateCount("Indivisibility"), 1);
+// console.log(duplicateCount("Indivisibilities"), 2, "characters may not be adjacent");
+
+
+
+function countBy(x, n) {
+	let y = [];
+
+	for (let i = 1; i <= n; i++) {
+		let sum = x * i;
+		y.push(sum);
+	}
+
+	return y;
 }
 
-console.log(duplicateCount(""), 0);
-console.log(duplicateCount("abcde"), 0);
-console.log(duplicateCount("aabbcde"), 2);
-console.log(duplicateCount("aabBcde"), 2, "should ignore case");
-console.log(duplicateCount("Indivisibility"), 1);
-console.log(duplicateCount("Indivisibilities"), 2, "characters may not be adjacent");
-
+console.log(countBy(1, 10), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "Array does not match")
+console.log(countBy(2, 5), [2, 4, 6, 8, 10], "Array does not match")
 
