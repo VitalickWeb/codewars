@@ -657,17 +657,27 @@
 
 
 
-function countBy(x, n) {
-	let y = [];
+// function countBy(x, n) {
+// 	let y = [];
 
-	for (let i = 1; i <= n; i++) {
-		let sum = x * i;
-		y.push(sum);
-	}
+// 	for (let i = 1; i <= n; i++) {
+// 		let sum = x * i;
+// 		y.push(sum);
+// 	}
 
-	return y;
+// 	return y;
+// }
+
+// console.log(countBy(1, 10), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "Array does not match")
+// console.log(countBy(2, 5), [2, 4, 6, 8, 10], "Array does not match")
+
+
+
+function lovefunc(flower1, flower2) {
+	return flower1 % 2 !== 0 && flower2 % 2 === 0 || flower1 % 2 === 0 && flower2 % 2 !== 0;
 }
 
-console.log(countBy(1, 10), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "Array does not match")
-console.log(countBy(2, 5), [2, 4, 6, 8, 10], "Array does not match")
-
+console.log(lovefunc(1, 4), true)
+console.log(lovefunc(2, 2), false)
+console.log(lovefunc(0, 1), true)
+console.log(lovefunc(0, 0), false)
