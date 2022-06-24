@@ -616,17 +616,43 @@
 
 
 
-function number(array) {
-	let count = 1;
-	const newArr = [];
+// function number(array) {
+// 	let count = 1;
+// 	const newArr = [];
 
-	for (let i = 0; i < array.length; i++) {
-		newArr.push(count++ + ': ' + array[i]);
-	}
+// 	for (let i = 0; i < array.length; i++) {
+// 		newArr.push(count++ + ': ' + array[i]);
+// 	}
 
-	return newArr;
+// 	return newArr;
+// }
+
+// console.log(number([]), [], 'Empty array should return empty array');
+// console.log(number(["a", "b", "c"]), ["1: a", "2: b", "3: c"], 'Return the correct line numbers');
+
+
+
+function duplicateCount(text) {
+	let newArr = [];
+	text.toLowerCase().split('').filter((t, idx) => {
+		let res = 0;
+		if (t === t) {
+			res += text.indexOf(t);
+		}
+		if (idx !== res) {
+			newArr.push(res);
+		}
+	});
+
+	const uniqSet = new Set(newArr);
+	return [...uniqSet].length;
 }
 
-console.log(number([]), [], 'Empty array should return empty array');
-console.log(number(["a", "b", "c"]), ["1: a", "2: b", "3: c"], 'Return the correct line numbers');
+console.log(duplicateCount(""), 0);
+console.log(duplicateCount("abcde"), 0);
+console.log(duplicateCount("aabbcde"), 2);
+console.log(duplicateCount("aabBcde"), 2, "should ignore case");
+console.log(duplicateCount("Indivisibility"), 1);
+console.log(duplicateCount("Indivisibilities"), 2, "characters may not be adjacent");
+
 
