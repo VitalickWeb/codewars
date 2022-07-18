@@ -684,15 +684,74 @@
 
 
 
-function sumTwoSmallestNumbers(numbers) {
-	let newArr = numbers.sort((a, b) => a - b)
-	let res = newArr.slice(0, 2);
-	return res.reduce((acc, el) => acc + el)
-	//return res.map((r, i) => r + res[i + 1])[0];
+// function sumTwoSmallestNumbers(numbers) {
+// 	let newArr = numbers.sort((a, b) => a - b)
+// 	let res = newArr.slice(0, 2);
+// 	return res.reduce((acc, el) => acc + el)
+// 	//return res.map((r, i) => r + res[i + 1])[0];
+// }
+
+// console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]), 13, "Sum should be 13");
+// console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]), 6, "Sum should be 6");
+// console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]), 10, "Sum should be 10");
+// console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1]), 24, "Sum should be 24");
+// console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]), 16, "Sum should be 16");
+
+
+
+function findOdd(arr) {
+	let obj = {};
+
+	arr.forEach(el => {
+		obj[el] = obj[el] ? obj[el] + 1 : 1;
+	});
+
+	for (let key in obj) {
+		return obj[key] % 2 !== 0 && +key;
+	}
 }
 
-console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]), 13, "Sum should be 13");
-console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]), 6, "Sum should be 6");
-console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]), 10, "Sum should be 10");
-console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1]), 24, "Sum should be 24");
-console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]), 16, "Sum should be 16");
+console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]), 5);
+console.log(findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]), -1);
+console.log(findOdd([20, 1, 1, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5]), 5);
+console.log(findOdd([10]), 10);
+console.log(findOdd([1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1]), 10);
+console.log(findOdd([5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10]), 1);
+
+
+// 14. Д.З.:
+// Напишите функцию addFriends, которая принимает параметром массив students
+// и добавляет в каждому студенту свойство "friends",
+// значением которого является массив имён всех остальных студентов из массива students,
+// за исключением собственного имени студента. Т.е. в друзьях у Боба Боба быть не должно.
+let students = [
+	{
+		name: 'Bob',
+		age: 29,
+		isMarried: true,
+		scorse: 100
+	},
+	{
+		name: 'Alex',
+		age: 32,
+		isMarried: true,
+		scorse: 110
+	},
+	{
+		name: 'Anna',
+		age: 39,
+		isMarried: true,
+		scorse: 103
+	},
+	{
+		name: 'Kris',
+		age: 35,
+		isMarried: false,
+		scorse: 212
+	},
+]
+
+const addFriends = (students) => {
+	return students.map(s => ({ ...s, friends: students.map(s => s.name).filter(el => s.name !== el) }))
+}
+console.log(addFriends(students));
