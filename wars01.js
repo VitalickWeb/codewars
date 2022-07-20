@@ -699,24 +699,24 @@
 
 
 
-function findOdd(arr) {
-	let obj = {};
+// function findOdd(arr) {
+// 	let obj = {};
 
-	arr.forEach(el => {
-		obj[el] = obj[el] ? obj[el] + 1 : 1;
-	});
+// 	arr.forEach(el => {
+// 		obj[el] = obj[el] ? obj[el] + 1 : 1;
+// 	});
 
-	for (let key in obj) {
-		return obj[key] % 2 !== 0 && +key;
-	}
-}
+// 	for (let key in obj) {
+// 		return obj[key] % 2 !== 0 && +key;
+// 	}
+// }
 
-console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]), 5);
-console.log(findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]), -1);
-console.log(findOdd([20, 1, 1, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5]), 5);
-console.log(findOdd([10]), 10);
-console.log(findOdd([1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1]), 10);
-console.log(findOdd([5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10]), 1);
+// console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]), 5);
+// console.log(findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]), -1);
+// console.log(findOdd([20, 1, 1, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5]), 5);
+// console.log(findOdd([10]), 10);
+// console.log(findOdd([1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1]), 10);
+// console.log(findOdd([5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10]), 1);
 
 
 // 14. Д.З.:
@@ -724,34 +724,45 @@ console.log(findOdd([5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10]), 1);
 // и добавляет в каждому студенту свойство "friends",
 // значением которого является массив имён всех остальных студентов из массива students,
 // за исключением собственного имени студента. Т.е. в друзьях у Боба Боба быть не должно.
-let students = [
-	{
-		name: 'Bob',
-		age: 29,
-		isMarried: true,
-		scorse: 100
-	},
-	{
-		name: 'Alex',
-		age: 32,
-		isMarried: true,
-		scorse: 110
-	},
-	{
-		name: 'Anna',
-		age: 39,
-		isMarried: true,
-		scorse: 103
-	},
-	{
-		name: 'Kris',
-		age: 35,
-		isMarried: false,
-		scorse: 212
-	},
-]
+// let students = [
+// 	{
+// 		name: 'Bob',
+// 		age: 29,
+// 		isMarried: true,
+// 		scorse: 100
+// 	},
+// 	{
+// 		name: 'Alex',
+// 		age: 32,
+// 		isMarried: true,
+// 		scorse: 110
+// 	},
+// 	{
+// 		name: 'Anna',
+// 		age: 39,
+// 		isMarried: true,
+// 		scorse: 103
+// 	},
+// 	{
+// 		name: 'Kris',
+// 		age: 35,
+// 		isMarried: false,
+// 		scorse: 212
+// 	},
+// ]
 
-const addFriends = (students) => {
-	return students.map(s => ({ ...s, friends: students.map(s => s.name).filter(el => s.name !== el) }))
-}
-console.log(addFriends(students));
+// const addFriends = (students) => {
+// 	return students.map(s => ({ ...s, friends: students.map(s => s.name).filter(el => s.name !== el) }))
+// }
+// console.log(addFriends(students));
+
+
+// function even_or_odd(number) {
+// 	return number % 2 === 0 ? 'Even' : 'Odd';
+// }
+
+// console.log(even_or_odd(2), "Even");
+// console.log(even_or_odd(7), "Odd");
+// console.log(even_or_odd(-42), "Even");
+// console.log(even_or_odd(-7), "Odd");
+// console.log(even_or_odd(0), "Even");
