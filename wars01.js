@@ -766,3 +766,18 @@
 // console.log(even_or_odd(-42), "Even");
 // console.log(even_or_odd(-7), "Odd");
 // console.log(even_or_odd(0), "Even");
+
+
+var uniqueInOrder = function (iterable) {
+	const arr = iterable;
+	const res = [];
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] !== arr[i + 1]) {
+			res.push(arr[i]);
+		}
+	}
+
+	return res;
+}
+
+console.log(uniqueInOrder('AAAABBBCCDAABBB'), ['A', 'B', 'C', 'D', 'A', 'B'])
