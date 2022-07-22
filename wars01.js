@@ -768,16 +768,41 @@
 // console.log(even_or_odd(0), "Even");
 
 
-var uniqueInOrder = function (iterable) {
-	const arr = iterable;
-	const res = [];
-	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] !== arr[i + 1]) {
-			res.push(arr[i]);
+// var uniqueInOrder = function (iterable) {
+// 	const arr = iterable;
+// 	const res = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if (arr[i] !== arr[i + 1]) {
+// 			res.push(arr[i]);
+// 		}
+// 	}
+
+// 	return res;
+// }
+
+// console.log(uniqueInOrder('AAAABBBCCDAABBB'), ['A', 'B', 'C', 'D', 'A', 'B'])
+
+
+function XO(str) {
+	let strUp = str.toUpperCase();
+	let count1 = 0;
+	let count2 = 0;
+
+	for (let i = 0; i < strUp.length; i++) {
+
+		if (strUp[i] === 'O') {
+			count1 += 1;
+		} else if (strUp[i] === 'X') {
+			count2 += 1;
 		}
 	}
-
-	return res;
+	return count1 === count2;
 }
 
-console.log(uniqueInOrder('AAAABBBCCDAABBB'), ['A', 'B', 'C', 'D', 'A', 'B'])
+console.log(XO('xo'), true);
+console.log(XO("xxOo"), true);
+console.log(XO("xxxm"), false);
+console.log(XO("Oo"), false);
+console.log(XO("ooom"), false);
+
+
