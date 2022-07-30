@@ -783,26 +783,34 @@
 // console.log(uniqueInOrder('AAAABBBCCDAABBB'), ['A', 'B', 'C', 'D', 'A', 'B'])
 
 
-function XO(str) {
-	let strUp = str.toUpperCase();
-	let count1 = 0;
-	let count2 = 0;
+// function XO(str) {
+// 	let strUp = str.toUpperCase();
+// 	let count1 = 0;
+// 	let count2 = 0;
 
-	for (let i = 0; i < strUp.length; i++) {
+// 	for (let i = 0; i < strUp.length; i++) {
 
-		if (strUp[i] === 'O') {
-			count1 += 1;
-		} else if (strUp[i] === 'X') {
-			count2 += 1;
-		}
-	}
-	return count1 === count2;
+// 		if (strUp[i] === 'O') {
+// 			count1 += 1;
+// 		} else if (strUp[i] === 'X') {
+// 			count2 += 1;
+// 		}
+// 	}
+// 	return count1 === count2;
+// }
+
+// console.log(XO('xo'), true);
+// console.log(XO("xxOo"), true);
+// console.log(XO("xxxm"), false);
+// console.log(XO("Oo"), false);
+// console.log(XO("ooom"), false);
+
+
+function abbrevName(name) {
+	let arr = name.split(' ')
+	return arr.map(el => el[0]).join('.')
 }
 
-console.log(XO('xo'), true);
-console.log(XO("xxOo"), true);
-console.log(XO("xxxm"), false);
-console.log(XO("Oo"), false);
-console.log(XO("ooom"), false);
-
-
+console.log(abbrevName("Sam Harris"), "S.H");
+console.log(abbrevName("Patrick Feenan"), "P.F");
+console.log(abbrevName("VtkOCZoxCRpmrBr KD"), "V.K");
