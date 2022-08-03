@@ -806,11 +806,33 @@
 // console.log(XO("ooom"), false);
 
 
-function abbrevName(name) {
-	let arr = name.split(' ')
-	return arr.map(el => el[0]).join('.')
+// function abbrevName(name) {
+// 	let arr = name.split(' ')
+// 	return arr.map(el => el[0]).join('.')
+// }
+
+// console.log(abbrevName("Sam Harris"), "S.H");
+// console.log(abbrevName("Patrick Feenan"), "P.F");
+// console.log(abbrevName("VtkOCZoxCRpmrBr KD"), "V.K");
+
+const greet = () => {
+	return [
+		'01101000',
+		'01100101',
+		'01101100',
+		'01101100',
+		'01101111',
+		'00100000',
+		'01110111',
+		'01101111',
+		'01110010',
+		'01101100',
+		'01100100',
+		'00100001',
+	]
+		.map(byte => String.fromCharCode(parseInt(byte, 2)))
+		.join('')
 }
 
-console.log(abbrevName("Sam Harris"), "S.H");
-console.log(abbrevName("Patrick Feenan"), "P.F");
-console.log(abbrevName("VtkOCZoxCRpmrBr KD"), "V.K");
+console.log(typeof greet, "function", "greet should be a function");
+console.log(greet(), "hello world!");
